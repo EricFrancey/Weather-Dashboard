@@ -5,6 +5,7 @@
 This is a homework project for University of Toronto: School of Continuing Studies.
 
 WORK IN PROGRESS
+
 Features to be implemented:
 
 -Weather data
