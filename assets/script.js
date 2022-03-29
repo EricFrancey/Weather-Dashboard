@@ -27,52 +27,52 @@ function getApi() {
   localStorage.setItem("search-history", JSON.stringify(searchList));
   
   // To fetch after list button is clicked
-  addedButtons.addEventListener('click', function (event){
-    if (event.target.classList.contains('newButton')) {
-      userCity = event.target.textContent;
-      console.log("city is" + userCity)
+//   addedButtons.addEventListener('click', function (event){
+//     if (event.target.classList.contains('newButton')) {
+//       userCity = event.target.textContent;
+//       console.log("city is" + userCity)
 
-      fetch(queryURL).then(function (response) {
-        console.log(response)
-        return response.json();
-      })
-      .then(function (data) {
-        console.log('Fetch Response \n-------------');
-        console.log(data);
-        let lat = data.coord.lat;
-        let lon = data.coord.lon;
-        let fetchIcon = 'https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png'
-        let fetchUV = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey + "&cnt=1";
+//       fetch(queryURL).then(function (response) {
+//         console.log(response)
+//         return response.json();
+//       })
+//       .then(function (data) {
+//         console.log('Fetch Response \n-------------');
+//         console.log(data);
+//         let lat = data.coord.lat;
+//         let lon = data.coord.lon;
+//         let fetchIcon = 'https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png'
+//         let fetchUV = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey + "&cnt=1";
         
-        mainCity.innerHTML = userCity.value;
-        mainDate.textContent = moment().format("MM/DD/YYYY");
-        mainIcon.src = fetchIcon;
-        mainTemp.innerHTML = data.main.temp;
-        mainHumidity.innerHTML = data.main.humidity;
-        mainWindSpeed.innerHTML = data.wind.speed;
+//         mainCity.innerHTML = userCity.value;
+//         mainDate.textContent = moment().format("MM/DD/YYYY");
+//         mainIcon.src = fetchIcon;
+//         mainTemp.innerHTML = data.main.temp;
+//         mainHumidity.innerHTML = data.main.humidity;
+//         mainWindSpeed.innerHTML = data.wind.speed;
         
-        fetch(fetchUV).then(function(response){
-            return response.json()
-          })
-          .then(function(data){
-            mainUV.innerHTML = "uv" + data.current.uvi
-            if (data.current.uvi <= 2) {
-              mainUV.setAttribute("class","m-1 p-1 border")
-              mainUV.setAttribute("style","background-color: green")
-          } else if (uvi > 2 && uvi <= 5) {
-              mainUV.setAttribute("class","m-1 p-1 border")
-              mainUV.setAttribute("style","background-color: yellow")
-          } else if (uvi > 5 && uvi <= 8) {
-              mainUV.setAttribute("class","m-1 p-1 border")
-              mainUV.setAttribute("style","background-color: orange")
-          } else {
-              mainUV.setAttribute("class","m-1 p-1 border")
-              mainUV.setAttribute("style","background-color: red")
-          }
-      })
-    })
-  }
-})
+//         fetch(fetchUV).then(function(response){
+//             return response.json()
+//           })
+//           .then(function(data){
+//             mainUV.innerHTML = "uv" + data.current.uvi
+//             if (data.current.uvi <= 2) {
+//               mainUV.setAttribute("class","m-1 p-1 border")
+//               mainUV.setAttribute("style","background-color: green")
+//           } else if (uvi > 2 && uvi <= 5) {
+//               mainUV.setAttribute("class","m-1 p-1 border")
+//               mainUV.setAttribute("style","background-color: yellow")
+//           } else if (uvi > 5 && uvi <= 8) {
+//               mainUV.setAttribute("class","m-1 p-1 border")
+//               mainUV.setAttribute("style","background-color: orange")
+//           } else {
+//               mainUV.setAttribute("class","m-1 p-1 border")
+//               mainUV.setAttribute("style","background-color: red")
+//           }
+//       })
+//     })
+//   }
+// })
 
   // Regular fetch
   fetch(queryURL).then(function (response) {
@@ -156,12 +156,12 @@ function addCityHistory(){
   }
 }
 
-function sumbitRequest(){
+function submitRequest(){
   event.preventDefault();
   getApi();
   addCityHistory();
 }
-submitButton.addEventListener('click', sumbitRequest);
+submitButton.addEventListener('click', submitRequest);
 
 
 // to be used to store local data
