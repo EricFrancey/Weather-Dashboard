@@ -1,21 +1,38 @@
 # Weather-Dashboard
 
-## Purpose
+## Description
 
-This is a homework project for University of Toronto: School of Continuing Studies.
+This is a weather tracking app utilizing [Open Weather API](https://openweathermap.org/).
 
-WORK IN PROGRESS
+```md
+Features:
 
-Features to be implemented:
+- Search for cities
+- See 5 day forecast
+```
 
--Weather data
+## Table of Contents
 
-## Link
-https://ericfrancey.github.io/Weather-Dashboard/
+  * [Description](#description)
+  * [License](#license)
+  * [Demo](#demo)
+  * [Screenshots](#screenshots)
+  * [Questions](#questions)
+  * [Credits](#credits)
 
-## Screenshot
-  ![Alt text](assets/WDscreen.png?raw=true "Screenshot")
 
-  
+## Demo
+Link to live demo: [https://ericfrancey.github.io/Weather-Dashboard/](https://ericfrancey.github.io/Weather-Dashboard/)
+
+## Screenshots
+
+![Alt text](assets/weatherscreen.jpg?raw=true "Screenshot")
+
+
+## Questions
+You may contact me on GitHub.
+
+
 ## Credits
-All credits to Sal and the gang!
+
+University of Toronto: School of Continuing Studies
