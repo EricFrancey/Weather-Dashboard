@@ -22,7 +22,7 @@ function getApi() {
   event.preventDefault();
   console.log(userCity);
   let cityName = userCity.value.trim();
-  var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric&appid=" + APIKey;
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric&appid=" + APIKey;
   searchList.push(cityName);
   localStorage.setItem("search-history", JSON.stringify(searchList));
   
